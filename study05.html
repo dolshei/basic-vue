@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic-vue</title>
+    <style>
+        .red {
+            color: red;
+        }
+        .font-bold {
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <template v-if="number === 1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </template>
+    <div v-else-if="number === 2">Hi</div>
+    <div v-else>No</div>
+    <br>
+    <button @click="increaseNumber">Increase</button> {{ number }} <br>
+    ------------------------- <br>
+    <div v-show="show">Yes</div><br>
+    <button @click="toggle">Toggle</button>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            number: 1,
+            show: false
+        },
+        methods: {
+            increaseNumber() {
+                this.number++;
+            },
+            toggle() {
+                this.show = !this.show;
+            }
+        },
+
+    })
+</script>
+</body>
+</html>
